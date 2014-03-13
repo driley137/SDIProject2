@@ -15,7 +15,7 @@ lName = prompt("What is your last name?", "i.e. Tyson");
 time = prompt("What time is it? (24hr clock, no zeroes before or after)", "Please use the 24hr clock, with no preceeding or proceeding zeroes");
 
 // Beginning of my "Procedure" step of the flow chart.
-function timeConvert() {
+function timeConvert(i) {
     if (i <=12) {
         // Spitting back input number
         i = i;
@@ -49,3 +49,6 @@ function timeConvert() {
     } //End first else
 } // END   t i m e C o n v e r t ( ) 
 
+// Calling the function for the PROCEDURE step in the workflow
+timeConvert(time);
+workout = confirm("Would you like to start " + fName + "?");
