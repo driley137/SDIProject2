@@ -7,16 +7,20 @@
 */
 
 // Declaring my global variables
-var fName = "Billy"; lName = "Belly"; time = 0; workout = true;
+var fName = "Billy"; lName = "Belly"; time = 0; workout = true; hours = 0;
 
 // Prompting the user
 fName = prompt("What is your first name?", "i.e. Gandalf");
 lName = prompt("What is your last name?", "i.e. Tyson");
 time = prompt("What time is it? (24hr clock, no zeroes before or after)", "Please use the 24hr clock, with no preceeding or proceeding zeroes");
 
-// Beginning of my "Procedure" step of the flow chart.
-function timeConvert(i) {
-    if (i <=12) {
+// Quality Control, Parsing INT
+time = parseInt(time);
+
+// Method to convert the 24hr time to 1-12
+function timeConvert(time) {
+    var i = time;
+    if (i <= 12) {
         // Spitting back input number
         i = i;
     } else {
@@ -47,8 +51,32 @@ function timeConvert(i) {
         } // End IF/ELSE TREE
         
     } //End first else
-} // END   t i m e C o n v e r t ( ) 
+    
+} // END   t i m e C o n v e r t ( )
+
 
 // Calling the function for the PROCEDURE step in the workflow
 timeConvert(time);
-workout = confirm("Would you like to start " + fName + "?");
+workout = confirm("Since it's " + time + " O\'Clock, Would you like to start " + fName + "?");
+
+// Beginning boolean method
+function workoutMethod(i,j){
+
+// Declare local variable
+var x = j;
+    
+    while (x == j) {
+        // Implementing the conditional
+        if (x == j) {
+            console.log("It is " + x + " O\'Clock, I hope you\'re ready to workout!")
+            x++;
+        } else {
+            i = true;
+            break;
+        } // END else
+    } // END while loop
+       
+} // END      w o r k o u t M e t h o d ( ) 
+
+// Calling boolean method, with assignment in order to get a return.
+workout = workoutMethod(workout, time);
