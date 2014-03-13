@@ -15,11 +15,11 @@ lName = prompt("What is your last name?", "i.e. Tyson");
 time = prompt("What time is it? (24hr clock, no zeroes before or after)", "Please use the 24hr clock, with no preceeding or proceeding zeroes");
 
 // Quality Control, Parsing INT
-time = parseInt(time);
+// time = parseInt(time);
 
 // Method to convert the 24hr time to 1-12
-function timeConvert(time) {
-    var i = time;
+function timeConvert(i) {
+
     if (i <= 12) {
         // Spitting back input number
         i = i;
@@ -56,8 +56,15 @@ function timeConvert(time) {
 
 
 // Calling the function for the PROCEDURE step in the workflow
-timeConvert(time);
+time = timeConvert(time);
 workout = confirm("Since it's " + time + " O\'Clock, Would you like to start " + fName + "?");
+
+console.log(timeConvert(1));
+console.log(timeConvert(2));
+console.log(timeConvert(3));
+console.log(timeConvert(13));
+console.log(timeConvert(15));
+console.log(timeConvert(20));
 
 // Beginning boolean method
 function workoutMethod(i,j){
