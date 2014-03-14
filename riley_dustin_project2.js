@@ -15,7 +15,7 @@ lName = prompt("What is your last name?", "i.e. Tyson");
 time = prompt("What time is it? (24hr clock, no zeroes before or after)", "Please use the 24hr clock, with no preceeding or proceeding zeroes");
 
 // Quality Control, Parsing INT
-// time = parseInt(time);
+time = parseInt(time);
 
 // Method to convert the 24hr time to 1-12
 function timeConvert(i) {
@@ -51,26 +51,20 @@ function timeConvert(i) {
         } // End IF/ELSE TREE
         
     } //End first else
+    return i;
     
 } // END   t i m e C o n v e r t ( )
 
 
-// Calling the function for the PROCEDURE step in the workflow
+// Parsing the input number to make sure it's not a decimal
 time = timeConvert(time);
-workout = confirm("Since it's " + time + " O\'Clock, Would you like to start " + fName + "?");
 
-console.log(timeConvert(1));
-console.log(timeConvert(2));
-console.log(timeConvert(3));
-console.log(timeConvert(13));
-console.log(timeConvert(15));
-console.log(timeConvert(20));
 
 // Beginning boolean method
 function workoutMethod(i,j){
 
-// Declare local variable
-var x = j;
+    // Declare local variable
+    var x = j;
     
     while (x == j) {
         // Implementing the conditional
@@ -82,8 +76,35 @@ var x = j;
             break;
         } // END else
     } // END while loop
-       
+    
+    return i;   
 } // END      w o r k o u t M e t h o d ( ) 
+
 
 // Calling boolean method, with assignment in order to get a return.
 workout = workoutMethod(workout, time);
+
+
+// Beginning math process
+function math(){
+    
+} // END
+
+
+// Beginning String function
+function fullName(i, j){
+    
+    // Declare local variables
+    var greet = "Hello, "; getMotivated = ", Let\'s get our blood pumping!"; intro = "";
+    
+    // Concatenating it all together now
+    intro = greet + i + " " + j + getMotivated;
+    
+    // Spit it back
+    return intro;
+    
+} // END       f u l l N a m e ( ) 
+
+
+// Calling all methods and returning for print outs
+workout = confirm("Since it's " + time + " O\'Clock, Would you like to start " + fName + "?");
