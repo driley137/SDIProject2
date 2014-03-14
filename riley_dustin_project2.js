@@ -7,7 +7,7 @@
 */
 
 // Declaring my global variables
-var fName = "Billy"; lName = "Belly"; time = 0; workout = true; hours = 0;
+var fName = "Billy"; lName = "Belly"; time = 0; workout = true; hours = 0; intro = "";
 
 // Prompting the user
 fName = prompt("What is your first name?", "i.e. Gandalf");
@@ -56,10 +56,6 @@ function timeConvert(i) {
 } // END   t i m e C o n v e r t ( )
 
 
-// Parsing the input number to make sure it's not a decimal
-time = timeConvert(time);
-
-
 // Beginning boolean method
 function workoutMethod(i,j){
 
@@ -69,7 +65,7 @@ function workoutMethod(i,j){
     while (x == j) {
         // Implementing the conditional
         if (x == j) {
-            console.log("It is " + x + " O\'Clock, I hope you\'re ready to workout!")
+            console.log("It is " + x + " O'Clock, lets see if you're ready.")
             x++;
         } else {
             i = true;
@@ -81,30 +77,41 @@ function workoutMethod(i,j){
 } // END      w o r k o u t M e t h o d ( ) 
 
 
-// Calling boolean method, with assignment in order to get a return.
-workout = workoutMethod(workout, time);
-
-
 // Beginning math process
-function math(){
+function timeAfterWorkout(h){
+    //Declare local variable
+    var shortWorkout = 1;
     
-} // END
+    for(var x = 0; x != 1; x++){
+        h = time + shortWorkout;
+    } // END for loop
+    
+    // Returning hours with workout
+    return h;
+} // END  t i m e A f t e r W o r k o u t
 
 
 // Beginning String function
 function fullName(i, j){
     
     // Declare local variables
-    var greet = "Hello, "; getMotivated = ", Let\'s get our blood pumping!"; intro = "";
+    var greet = "Hello, "; getMotivated = ", Let's get our blood pumping!"; together = "";
     
     // Concatenating it all together now
-    intro = greet + i + " " + j + getMotivated;
+    together = greet + i + " " + j + getMotivated;
     
     // Spit it back
-    return intro;
+    return together;
     
 } // END       f u l l N a m e ( ) 
 
 
 // Calling all methods and returning for print outs
-workout = confirm("Since it's " + time + " O\'Clock, Would you like to start " + fName + "?");
+time = timeConvert(time);
+workout = confirm("Since it's " + time + " O'Clock, Would you like to start " + fName + "?");
+workout = workoutMethod(workout, time);
+hours = timeAfterWorkout(time);
+intro = fullName(fName, lName);
+
+console.log(intro + "\nSince it's " + time + " O'Clock now, after your workout it'll be " + hours + " O'Clock. Better go get that blood pumping!");
+
